@@ -1,0 +1,54 @@
+[gd_scene load_steps=6 format=3 uid="uid://biphfw2750ud6"]
+
+[ext_resource type="Script" path="res://scripts/explosion.gd" id="1_4aldc"]
+[ext_resource type="Texture2D" uid="uid://bho7fm7jygv8r" path="res://asserts/icons8-fire-60.png" id="2_b2a7l"]
+
+[sub_resource type="Curve" id="Curve_c2dex"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.533333, 0.637363), 0.0, 0.0, 0, 0, Vector2(0.973333, 0.285714), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_3n75i"]
+curve = SubResource("Curve_c2dex")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_3edm7"]
+lifetime_randomness = 0.75
+particle_flag_disable_z = true
+emission_shape_scale = Vector3(0, 0, 1)
+angle_min = -156.7
+angle_max = 5.1
+inherit_velocity_ratio = 0.091
+spread = 180.0
+flatness = 0.045
+initial_velocity_min = 14.69
+initial_velocity_max = 237.81
+radial_velocity_min = 52.25
+radial_velocity_max = 191.01
+gravity = Vector3(0, 2, 0)
+linear_accel_min = -76.07
+linear_accel_max = 23.6
+attractor_interaction_enabled = false
+scale_min = 0.1
+scale_curve = SubResource("CurveTexture_3n75i")
+color = Color(1, 0.666667, 0.729412, 0.843137)
+hue_variation_min = 0.08
+hue_variation_max = 0.22
+anim_speed_min = 2.34
+anim_speed_max = 7.37
+turbulence_noise_strength = 5.21
+turbulence_noise_scale = 0.158
+
+[node name="explosion" type="Node2D"]
+script = ExtResource("1_4aldc")
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="."]
+amount = 60
+amount_ratio = 0.6903
+sub_emitter = NodePath(".")
+process_material = SubResource("ParticleProcessMaterial_3edm7")
+texture = ExtResource("2_b2a7l")
+lifetime = 0.8
+speed_scale = 1.29
+explosiveness = 1.0
+randomness = 0.28
+collision_base_size = 0.0
+visibility_rect = Rect2(-150, -150, 300, 300)

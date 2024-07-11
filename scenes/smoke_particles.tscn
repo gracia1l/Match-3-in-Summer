@@ -1,0 +1,61 @@
+[gd_scene load_steps=8 format=3 uid="uid://co52wri3tp7i3"]
+
+[ext_resource type="Script" path="res://scripts/smoke_column.gd" id="1_5a4u7"]
+[ext_resource type="Texture2D" uid="uid://c7bksg7514gei" path="res://asserts/particle-90 (2).png" id="2_fhnrt"]
+
+[sub_resource type="Curve" id="Curve_syd1k"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_nyu04"]
+curve = SubResource("Curve_syd1k")
+
+[sub_resource type="Curve" id="Curve_1ggjc"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_kt127"]
+curve = SubResource("Curve_1ggjc")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_kt2oy"]
+lifetime_randomness = 0.1
+particle_flag_disable_z = true
+emission_shape = 1
+emission_sphere_radius = 1.0
+direction = Vector3(0, -1, 0)
+spread = 180.0
+flatness = 0.473
+initial_velocity_min = 60.0
+initial_velocity_max = 128.76
+radial_velocity_max = 20.0
+gravity = Vector3(0, 0, 0)
+linear_accel_min = 1.75
+linear_accel_max = 6.25
+radial_accel_min = -2.03
+radial_accel_max = 2.47
+tangential_accel_min = -2.25
+tangential_accel_max = 4.5
+scale_min = 0.1
+scale_max = 0.6
+scale_curve = SubResource("CurveTexture_nyu04")
+color = Color(0.63792, 0.3744, 0.96, 0.776471)
+hue_variation_min = -0.71
+hue_variation_max = -0.1
+anim_speed_min = 0.54
+anim_speed_max = 2.16
+turbulence_noise_strength = 13.63
+turbulence_noise_scale = 8.125
+turbulence_noise_speed_random = 0.17
+turbulence_influence_min = 0.175
+turbulence_influence_max = 0.379
+turbulence_influence_over_life = SubResource("CurveTexture_kt127")
+
+[node name="smoke_column" type="Node2D"]
+scale = Vector2(6, 6)
+script = ExtResource("1_5a4u7")
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="."]
+amount = 60
+process_material = SubResource("ParticleProcessMaterial_kt2oy")
+texture = ExtResource("2_fhnrt")
+explosiveness = 1.0

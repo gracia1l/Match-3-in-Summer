@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://dqif6qf83vrt0"]
+
+[ext_resource type="PackedScene" uid="uid://bdewnslmm4blr" path="res://scenes/piece.tscn" id="1_yj3mb"]
+[ext_resource type="Texture2D" uid="uid://b2cf8i5gd36w7" path="res://asserts/pieces/purple2.png" id="2_8o52c"]
+
+[node name="lime_piece" instance=ExtResource("1_yj3mb")]
+color = "purple"
+
+[node name="Sprite2D" parent="." index="0"]
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("2_8o52c")

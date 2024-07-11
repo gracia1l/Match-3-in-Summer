@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://24b33w32tid5"
+path="res://.godot/imported/1-Foxtail-Grass Studio - 昼下がりの憂鬱 (午后的忧郁).ogg-a3a2687dc31d3cb4a05636ae046701ec.oggvorbisstr"
+
+[deps]
+
+source_file="res://audio/music/1-Foxtail-Grass Studio - 昼下がりの憂鬱 (午后的忧郁).ogg"
+dest_files=["res://.godot/imported/1-Foxtail-Grass Studio - 昼下がりの憂鬱 (午后的忧郁).ogg-a3a2687dc31d3cb4a05636ae046701ec.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
